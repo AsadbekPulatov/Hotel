@@ -3,6 +3,7 @@
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ViewController::class, 'index'])->name('index');
-Route::get('/services', [ViewController::class, 'services'])->name('services');
+Route::get('/service', [ViewController::class, 'service'])->name('service');
 Route::get('/booking', [ViewController::class, 'booking'])->name('booking');
 Route::get('/locations', [ViewController::class, 'locations'])->name('locations');
 
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource("/carousels", CarouselController::class);
     Route::resource("/rooms", RoomController::class);
+    Route::resource("/services", ServiceController::class);
 });
 
 require __DIR__.'/auth.php';

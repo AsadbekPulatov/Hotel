@@ -5,7 +5,7 @@
             <nav>
                 <ul id="footer_menu">
                     <li class="@if(request()->routeIs('index')) active @endif"><a href="{{ route("index") }}">Biz haqimizda</a></li>
-                    <li class="@if(request()->routeIs('services')) active @endif"><a href="{{ route("services") }}">Xizmatlar</a></li>
+                    <li class="@if(request()->routeIs('service')) active @endif"><a href="{{ route("service") }}">Xizmatlar</a></li>
                     <li class="@if(request()->routeIs('booking')) active @endif"><a href="{{ route("booking") }}">Band qilish</a></li>
                     <li class="@if(request()->routeIs('locations')) active @endif last"><a href="{{ route("locations") }}">Bog'lanish</a></li>
                 </ul>

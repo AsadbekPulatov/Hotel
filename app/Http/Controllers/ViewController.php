@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Carousel;
 use App\Models\Room;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -13,8 +14,9 @@ class ViewController extends Controller
         return view("front.index", compact("carousels"));
     }
 
-    public function services(){
-        return view("front.services");
+    public function service(){
+        $services = Service::all();
+        return view("front.services", compact('services'));
     }
 
     public function booking(){

@@ -12,6 +12,9 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('services.index')" :active="request()->routeIs('services.index')">
+                        Xizmatlar
+                    </x-nav-link>
                     <x-nav-link :href="route('rooms.index')" :active="request()->routeIs('rooms.index')">
                         Mehmonxonalar
                     </x-nav-link>
