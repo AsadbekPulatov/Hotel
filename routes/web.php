@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::resource("/carousels", CarouselController::class);
     Route::resource("/rooms", RoomController::class);
     Route::resource("/services", ServiceController::class);
+    Route::resource("/abouts", AboutController::class);
 });
 
 require __DIR__.'/auth.php';

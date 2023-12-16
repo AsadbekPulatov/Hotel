@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Carousel;
 use App\Models\Room;
 use App\Models\Service;
@@ -11,7 +12,8 @@ class ViewController extends Controller
 {
     public function index(){
         $carousels = Carousel::all();
-        return view("front.index", compact("carousels"));
+        $abouts = About::all();
+        return view("front.index", compact("carousels", 'abouts'));
     }
 
     public function service(){
