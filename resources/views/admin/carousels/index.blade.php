@@ -28,7 +28,7 @@
                             <tr>
                                 <td>{{ $loop->index+1 }}</td>
                                 <td>
-                                    <img src="{{ asset('uploads/carousels/'.$item->image)  }}">
+                                    <img style="height: 100px;" src="{{ asset('uploads/carousels/'.$item->image)  }}">
                                 </td>
                                 <td>
                                     <form action="{{ route('carousels.destroy', $item) }}"
