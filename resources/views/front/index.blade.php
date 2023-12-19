@@ -27,7 +27,7 @@
                 @foreach($abouts as $item)
                     <div class="col1 pad">
                         <h2><img src="{{ asset('assets/images/title_marker1.jpg') }}" alt="">{{ $item->title }}</h2>
-                        <p class="pad_bot1">{{ \Illuminate\Support\Str::limit($item->text) }}</p>
+                        <p class="pad_bot1">{{ $item->text }}</p>
                         <a href="#" class="color1">Read More</a></div>
                 @endforeach
             </div>
