@@ -10,9 +10,9 @@
                         <figure class="left marg_right1"><img src="{{ asset('uploads/services/'.$item->image) }}" alt="" style="width: 200px; height: 150px;">
                         </figure>
                         <p class="pad_bot1" style="text-align: justify"><strong class="color3">{{ $item->title }}</strong><br>
-                            {{ $item->text }}
+                            {{ \Illuminate\Support\Str::limit($item->text, 300) }}
                         </p>
-                        <a href="#" class="color1">Read More</a></div>
+                        <a href="{{ route('service.single', $item->id) }}" class="color1">Read More</a></div>
                 @endforeach
             </div>
         </div>

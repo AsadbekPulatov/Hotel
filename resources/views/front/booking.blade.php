@@ -15,9 +15,9 @@
                         <p>{{ $item->text }}</p>
                         <ul class="list2">
                             <li><span>{{ $item->room }}</span>Xonalar</li>
-                            <li><span>{{ $item->bed }}</span>Yotoqlar</li>
+                            <li><span>{{ $item->bed }}</span>To'shaklar</li>
                         </ul>
-                        <a href="#" class="button2">Band qilish</a>
+{{--                        <a href="#" class="button2">Band qilish</a>--}}
                     </div>
                 @endforeach
             </div>

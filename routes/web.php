@@ -21,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ViewController::class, 'index'])->name('index');
 Route::get('/service', [ViewController::class, 'service'])->name('service');
+Route::get('/service/{id}', [ViewController::class, 'service_single'])->name('service.single');
 Route::get('/booking', [ViewController::class, 'booking'])->name('booking');
 Route::get('/locations', [ViewController::class, 'locations'])->name('locations');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
