@@ -24,6 +24,7 @@
                             <th class="col-3">Nomi</th>
                             <th class="col-2">Xona</th>
                             <th class="col-2">Yotoq</th>
+                            <th class="col-2">Narxi</th>
                             <th class="col-3">Rasm</th>
                             <th class="col-2">Amallar</th>
                         </tr>
@@ -33,6 +34,7 @@
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->room }}</td>
                                 <td>{{ $item->bed }}</td>
+                                <td>{{ number_format($item->price, 0, ',', ' ') }} so'm</td>
                                 <td>
                                     <img src="{{ asset('uploads/rooms/'.$item->image)  }}">
                                 </td>

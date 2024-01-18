@@ -8,6 +8,18 @@
                     <form action="{{ route('rooms.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mt-4">
+                            <label for="service_id" class="form-label">Xizmat:</label>
+                            <select name="service_id" id="service_id" class="form-control form-select">
+                                @foreach($services as $item)
+                                    <option value="{{ $item->id }}">{{ $item->title }}</option>
+                                @endforeach
+                            </select>
+                            @error('service_id')
+                            <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div class="mt-4">
                             <label for="title" class="form-label">Nomi:</label>
                             <input type="text" name="title" id="title" class="form-control">
                             @error('title')
@@ -35,6 +47,14 @@
                             <label for="bed" class="form-label">Yotoqlar soni:</label>
                             <input type="number" name="bed" id="bed" class="form-control">
                             @error('bed')
+                            <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="price" class="form-label">Narxi:</label>
+                            <input type="number" name="price" id="price" class="form-control">
+                            @error('price')
                             <p class="text-red-500 text-xs italic">{{ $message }}</p>
                             @enderror
                         </div>

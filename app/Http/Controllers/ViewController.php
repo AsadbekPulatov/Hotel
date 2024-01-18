@@ -23,7 +23,8 @@ class ViewController extends Controller
 
     public function service_single($id){
         $service = Service::findOrFail($id);
-        return view("front.single_service", compact('service'));
+        $rooms = Room::where('service_id', $service->id)->get();
+        return view("front.single_service", compact('service', 'rooms'));
     }
 
     public function booking(){

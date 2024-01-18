@@ -20,7 +20,7 @@ class ServiceSeeder extends Seeder
                 O'zbekiston mehmonxonasida klassik tarzda jihozlangan xonalar va minibarli suitlar mavjud. Ichkarida quyoshli yog'och mebel va nozik mato mavjud.
                 Uzbekistan mehmonxonasida dam olish va davolovchi masajlar mavjud.
                 Amir Temur Metro Stantsiyani 100 metr masofada joylashgan va 2 ta metro liniyasida joylashgan.",
-                "image" => "1703008739_543_1592068808dLbR_1024x768.jpg",
+                "image" => "1705560100_484224608.jpg",
             ],
             [
                 "title" => "HOTEL KARAVAN",

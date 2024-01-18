@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use App\Models\Service;
 use App\Services\FileUploadService;
 use Illuminate\Http\Request;
@@ -106,9 +107,10 @@ class ServiceController extends Controller
             File::delete($imagePath);
         }
 
+        $id = $service->id;
         // Delete the carousel item from the database
         $service->delete();
-
+        Room::where('service_id', $id)->delete();
         return redirect()->route('services.index')->with('success', 'Mehmonxona o\'chirildi.');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use App\Models\Service;
 use App\Services\FileUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -23,7 +24,8 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('admin.rooms.create');
+        $services = Service::all();
+        return view('admin.rooms.create',compact('services'));
     }
 
     /**
@@ -32,10 +34,12 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'service_id' => 'required',
             'title' => 'required',
             'text' => 'required',
             'room' => 'required',
             'bed' => 'required',
+            'price' => 'required',
             'image' => 'required|mimes:jpg,png,txt|max:2048',
         ]);
 
@@ -46,10 +50,12 @@ class RoomController extends Controller
         $fileName = $fileUploadService->upload($file, "rooms");
 
         $room = new Room();
+        $room->service_id = $request->service_id;
         $room->title = $request->title;
         $room->text = $request->text;
         $room->room = $request->room;
         $room->bed = $request->bed;
+        $room->price = $request->price;
         $room->image = $fileName;
         $room->save();
 
@@ -69,7 +75,8 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        return view('admin.rooms.edit', compact('room'));
+        $services = Service::all();
+        return view('admin.rooms.edit', compact('room','services'));
     }
 
     /**
@@ -77,10 +84,12 @@ class RoomController extends Controller
      */
     public function update(Request $request, Room $room)
     {
+        $room->service_id = $request->input('service_id');
         $room->title = $request->input('title');
         $room->text = $request->input('text');
         $room->room = $request->input('room');
         $room->bed = $request->input('bed');
+        $room->price = $request->input('price');
         if ($request->hasFile('image')) {
             // Delete the old image
 
